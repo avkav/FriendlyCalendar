@@ -6,6 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box; 
+    
 }
 :root{
     /*Palette*/
@@ -39,7 +40,7 @@ header {
     font-size: min(3vw,30px);    
  }
 header h1 {
-font-size: 20px;
+font-size: 35px;
 color:black;
 animation-name: sitename-animation;
 animation-duration: 4s;
@@ -57,7 +58,7 @@ header h1:hover{
 nav a{
     text-decoration:none;
     color:inherit;
-    font-size:14px;
+    font-size:25px;
 } 
 nav li{
     display:inline-block;
@@ -75,6 +76,7 @@ nav li:hover{
     margin: 10px;
     transition: .8s all;
     border-radius: 15px;
+    
 }
 .crazy-logo:hover {
     filter: drop-shadow(0 0 20px var(--bgcolor));
@@ -88,6 +90,7 @@ main {
      position: relative;
      & img {
         filter: brightness(0.5);
+        width: 100%;
      }
      .content-principal {
         padding: 10px;
@@ -97,7 +100,7 @@ main {
         top: 10vh;
         color: black;
         text-align: right;
-        right: 6em;
+        right: 10em;
         line-height: 1.7em;
         & p {
            margin: 0;
@@ -108,11 +111,10 @@ main {
            text-decoration: none;
            color: var(--textcolor);
            padding: 5px 5px;
-           margin-right: 2em;
+           margin-right: 6em;
            margin-top:2em;
-              
-           
-                    
+           margin-bottom: 2em;
+                         
           }
 
           .btn-color {
@@ -139,18 +141,20 @@ main {
               'formulario formulario';
   grid-template-columns: 50% 50%;            
   grid-template-rows: auto auto auto;
-  grid-row-gap: 2em;
+  grid-row-gap: 3em;
+  margin-top: 2em;
   /* & div[class^='item'] {
      border: 2px solid purple;
   } */
   .item-1 {
      grid-area: orador;
+    
      .content-card {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-evenly;
         & div[class^='card'] {
-           width: 200px;
+           width: 300px;
            & img {
               width: 100%;
               
@@ -222,7 +226,7 @@ main {
 
 footer{
   background-color: var(--third);
-  font-size: 10px;
+  font-size: 15px;
   display: flex;
   flex-wrap: wrap;
   margin: 10px; 
@@ -237,6 +241,7 @@ footer{
   color: black;
   order: 1;
   width: 25%;
+  
   
 }
 .central1 {
@@ -253,6 +258,11 @@ footer{
   color: white;
   order: 3;
   width: 25%;
+ & a{
+  margin:5px;
+  margin: top 10px;
+
+  }
   
 }
 
@@ -413,14 +423,38 @@ header img {
  /**Main**/
  
  /**sección principal**/
- .content-principal{
-font-size: 50%;
-& a{
-  font-size: 30%;
-  
-}
+ main {
+  .principal {
+    
+     & img {
+        filter: brightness(0.5);
+            
+     }
+     .content-principal {
+        padding: 10px;
+        width:100%;
+        background-color: rgba(236, 125, 171, 0.536);
+        color: black;
+        text-align: center;
+        font-size: 40%;
+        right: 0em;
+        top:3em;
+        .btn-color {
+           background-color: var(--primary);
+           border: 1px solid var(--primary);
+           width: 100%;  
+           text-align: center; 
+                  
+                      
+        }
 
- }
+        .btn-color:hover{
+          background-color: var(--secondary); 
+        } 
+    
+     }
+  }
+}
 
 /*Grid*/ 
 .grid-content {
@@ -432,46 +466,83 @@ font-size: 50%;
 }
 }
 
-  @media (min-width:481px) {
+  @media (min-width:768px) {
     /**Menu**/    
     .dropdown{
         display: none;
     }
     }
 
-   
   
-    /*481px — 768px: iPads, Tablets*/
-  /*@media (min-width:481px) and (max-width:768px) {*/
-      /*content-principal*/   
-     /*  
-      .content-principal {
-        padding: 10px;
-        width: 40%;
-        background-color: rgba(236, 125, 171, 0.536);
-        position: absolute;
-        top: 10vh;
-        color: black;
-        text-align: right;
-        right: 6em;
-        line-height: 1.7em;
-        & p {
-           margin: 0;
-        }
-        & a {
-           border: 1px solid var(--textcolor);
-           border-radius: 5px;
-           text-decoration: none;
-           color: var(--textcolor);
-           padding: 5px 5px;
-           margin-right: 4em;
-           margin-top:2em;
-           
-           
-                    
-          }
-      
-      }*/
+  /*481px — 768px: iPads, Tablets*/
+  @media (min-width:481px) and (max-width:768px) {
+
+    /**Menu**/ 
+.navmenu{
+  display:none;
+  }
+header img {
+  width:"50vw";
+  }
+
+   .dropbtn {
+      background-color: white;
+      color: black;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {color:#fff;
+      background-color:#000;}
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+      background-color: var(--primary);
+    }
+
+    header h1 {
+      display: none;
+      }
+
+
+   /**Main**/
+ 
+ /**sección principal**/
+ .content-principal{
+  font-size: 50%;
+  & a{
+    font-size: 30%;
+    
+  }
+  
+   }    
+  }
 
 
 /*Formulario*/
